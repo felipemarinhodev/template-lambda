@@ -7,7 +7,7 @@
     "test": "npx sls invoke test --path test",
     "start": "npx nodemon --exec npm run offline",
     "offline": "npx sls offline start --host 0.0.0.0",
-    "invoke-local": "sls invoke local -f hello --path requests-mock/user.json"
+    "invoke-local": "sls invoke local --stage prod -f hello --path requests-mock/user.json"
   },
   "keywords": [],
   "author": "Felipe Marinho <npm@felipemarinho.dev> (https://felipemarinho.dev/)",
@@ -20,6 +20,7 @@
     "serverless-offline": "^6.8.0"
   },
   "dependencies": {
-    "@hapi/joi": "^17.1.1"
+    "@hapi/joi": "^17.1.1",
+    "env-var": "^7.0.0"
   }
 }

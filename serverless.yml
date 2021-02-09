@@ -5,6 +5,9 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  environment:
+    ${file(./config/env.${self:provider.stage}.json)}
 
 plugins:
   - serverless-offline

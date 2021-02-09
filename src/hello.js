@@ -1,6 +1,7 @@
 const Joi = require('@hapi/joi');
 const decoratorValidator = require('./util/decoratorValidator');
 const globalEnum = require('./util/globalEnum');
+const settings = require('../config/settings')
 
 class Handler {
 	constructor() {}
@@ -49,6 +50,7 @@ class Handler {
 	}
 
 	async main(event) {
+		console.log("***env", settings);
 		try {
 			const data = event.body
 			const dbParams = this.prepareData(data);
